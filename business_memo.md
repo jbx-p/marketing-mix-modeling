@@ -16,6 +16,8 @@ and actively destroys value.
 
 ## Channel performance
 
+![ROI by channel](outputs/figures/04_roi_by_channel.png)
+
 | Channel | Weekly spend | Total contribution | Average ROI | Marginal ROI |
 |---|---|---|---|---|
 | Display | $18.4K | $140,796 | 58.45x | 32.14x |
@@ -30,12 +32,24 @@ not by genuine headroom to scale. TV shows the smallest gap between average and 
 ROI, meaning its efficiency is more stable across spend levels -- a more predictable channel
 to invest incrementally.
 
+![Marginal vs average ROI](outputs/figures/07_marginal_vs_average_roi.png)
+
 *Note: Display's estimate carries wider uncertainty than other channels -- its weekly spend
 varies very little, which makes its true effect harder for the model to isolate cleanly
 from baseline trend. Directionally reliable, but treat with less confidence than TV or
 Promotions.*
 
+## Response curves: why "highest ROI" isn't "where to spend more"
+
+![Response curves](outputs/figures/05_response_curves.png)
+
+Each channel has its own diminishing-returns curve. Display's curve flattens at a much
+lower absolute spend level than TV's, which is exactly why chasing its high average ROI
+with a large budget shift backfires.
+
 ## The reallocation recommendation
+
+![Scenario comparison](outputs/figures/06_scenario_comparison.png)
 
 | Scenario | Incremental sales | vs. current |
 |---|---|---|
@@ -56,6 +70,8 @@ changes. Avoid reallocating in one large step -- the data shows real efficiency 
 this point.
 
 ## Model validation
+
+![Model fit vs actual, holdout](outputs/figures/03_model_fit_holdout.png)
 
 - **Out-of-sample holdout (12 weeks):** R^2 = 0.905-0.924, MAPE = 2.5%
 - **Convergence:** all parameters r-hat <= 1.004 (well-converged)

@@ -6,6 +6,8 @@ reallocation opportunity backed by response-curve analysis.
 
 **[Read the business memo](business_memo.md)** for the full findings and recommendation.
 
+![Model fit vs actual](outputs/figures/03_model_fit_holdout.png)
+
 ## Why MMM, and why now
 
 Privacy changes (iOS 14 App Tracking Transparency, third-party cookie deprecation) broke
@@ -24,6 +26,8 @@ attribution used to provide.
   incremental sales) by testing multiple shift sizes, showing the model correctly
   captures diminishing returns rather than just chasing the highest-ROI label
 
+![ROI by channel](outputs/figures/04_roi_by_channel.png)
+
 ## Key concepts (and why they matter)
 
 **Adstock** -- marketing effects don't happen only in the week money is spent; they decay
@@ -37,10 +41,14 @@ as the 1st. Every channel has a point of diminishing returns. This project uses 
 logistic (Hill-type) saturation curve per channel, letting the model learn each channel's
 individual saturation point from the data.
 
+![Adstock and saturation demo](outputs/figures/02_adstock_saturation_demo.png)
+
 Together, these two transformations are what separate MMM from a plain linear regression
 of sales on spend -- and why simple attribution/correlation analysis on this project's raw
 data (see `notebooks/01_eda.py`) produced misleading same-week correlations (TV: 0.10,
 despite being one of the stronger true drivers of sales).
+
+![Response curves by channel](outputs/figures/05_response_curves.png)
 
 ## Real bugs found during development
 
@@ -84,6 +92,9 @@ Both are documented in code comments in `notebooks/03_fit_mmm.py` and
 5. **Optimization**: average and marginal ROI computed per channel; multiple budget
    reallocation scenarios tested to find the point where reallocation gains turn
    negative (channel saturation).
+
+![Marginal vs average ROI](outputs/figures/07_marginal_vs_average_roi.png)
+![Budget scenario comparison](outputs/figures/06_scenario_comparison.png)
 
 ## Tech stack
 
