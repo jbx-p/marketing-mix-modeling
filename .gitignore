@@ -2,7 +2,6 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-outputs/*.png
 outputs/*.nc
 data/*.csv
 !data/.gitkeep
