@@ -1,0 +1,5 @@
+scenario,total_incremental_sales,pct_change_vs_current
+Current allocation,570784.2727487879,0.0
+Shift 15% TV -> Paid Social,572337.7986051599,0.27217390712089623
+Shift 15% Display -> Paid Search,562616.5055730987,-1.430972709944305
+Shift 30% TV -> Display (lowest ROI -> highest ROI),569453.3717652678,-0.23317057723239645
